@@ -6,12 +6,12 @@
     <groupId>com.rackspace.cloud.api</groupId>
     <artifactId>clouddocs-maven-plugin-docbook</artifactId>
 
-    <name>Cloud API Docs Plugin</name>
+    <name>Cloud API Docs Plugin (DocBook)</name>
 
     <version>2.1.5-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
-    <url>https://github.com/rackerlabs/clouddocs-maven-plugin</url>
+    <url>https://github.com/rackerlabs/clouddocs-maven-plugin-docbook</url>
     <licenses>
       <license>
         <name>Apache License, Version 2.0</name>
@@ -21,16 +21,20 @@
     </licenses>
     <developers>
       <developer>
+        <name>Sam Harwell</name>
+        <email>sam.harwell@rackspace.com</email>
+      </developer>
+      <developer>
         <name>Thu Doan</name>
         <email>thu.doan@rackspace.com</email>
       </developer>
     </developers>
 
-<!--     <parent> -->
-<!--       <groupId>org.sonatype.oss</groupId> -->
-<!--       <artifactId>oss-parent</artifactId> -->
-<!--       <version>9</version> -->
-<!--     </parent> -->
+     <parent> 
+       <groupId>org.sonatype.oss</groupId> 
+       <artifactId>oss-parent</artifactId> 
+       <version>9</version> 
+     </parent> 
 
     <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -41,7 +45,6 @@
       <!-- Need to exclude this because the description includes Unicode characters,
            and docbkx-tools doesn't support specifying the encoding. -->
       <excluded.properties>annotation.graphic.close</excluded.properties>
-      <release.arguments>clean install -e</release.arguments>
     </properties>
 
     <description>
@@ -249,89 +252,15 @@
 
     <issueManagement>
       <system>GitHub Issues</system>
-      <url>https://github.com/rackerlabs/clouddocs-maven-plugin/issues</url>
+      <url>https://github.com/rackerlabs/clouddocs-maven-plugin-docbook/issues</url>
     </issueManagement>
 
-    <scm>
-        <connection>scm:git:ssh://git@github.com/rackerlabs/clouddocs-maven-plugin-docbook.git</connection>
-    </scm>
-<!--
     <scm>
       <url>https://github.com/rackerlabs/clouddocs-maven-plugin-docbook/tree/master</url>
       <connection>scm:git:git://github.com/rackerlabs/clouddocs-maven-plugin-docbook.git</connection>
       <developerConnection>scm:git:git@github.com:rackerlabs/clouddocs-maven-plugin-docbook.git</developerConnection>
-      <tag>clouddocs-maven-plugin-docbook-2.1.5</tag>
+      <tag>HEAD</tag>
     </scm>
--->
-
-<!--
-     <repositories>
-        <repository>
-        <id>docs-staging</id>
-        <name>Docbook server</name>
-        <url>http://162.209.12.245/nexus/content/repositories/docs-staging/</url>
-        <layout>default</layout>
-        <releases>
-          <enabled>true</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>
-      </repository>
-        <repository>
-        <id>docs-prod</id>
-        <name>Docbook server</name>
-        <url>http://162.209.12.245/nexus/content/repositories/docs-prod/</url>
-        <layout>default</layout>
-        <releases>
-          <enabled>true</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>
-      </repository>
-    </repositories>
-
-   <pluginRepositories>
-      <pluginRepository>
-        <id>docs-staging</id>
-        <name>Docbook</name>
-        <url>http://162.209.12.245/nexus/content/repositories/docs-staging/</url>
-        <layout>default</layout>
-        <releases>
-          <enabled>true</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>
-      </pluginRepository>
-      <pluginRepository>
-        <id>docs-prod</id>
-        <name>Docbook</name>
-        <url>http://162.209.12.245/nexus/content/repositories/docs-prod/</url>
-        <layout>default</layout>
-        <releases>
-          <enabled>true</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>
-      </pluginRepository>
-    </pluginRepositories>
--->
-
-  <distributionManagement>
-     <repository>
-        <id>docs-prod</id>
-        <name>Docbook release repo</name>
-        <url>http://162.209.12.245/nexus/content/repositories/docs-prod/</url>
-     </repository>
-     <snapshotRepository>
-        <id>docs-staging</id>
-        <name>Docbook SnapShot repo</name>
-        <url>http://162.209.12.245/nexus/content/repositories/docs-staging/</url>
-     </snapshotRepository>
-  </distributionManagement>
 
     <profiles>
       <profile>
@@ -342,8 +271,8 @@
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-compiler-plugin</artifactId>
               <configuration>
-                <source>1.7</source>
-                <target>1.7</target>
+                <source>1.6</source>
+                <target>1.6</target>
                 <showWarnings>true</showWarnings>
                 <showDeprecation>true</showDeprecation>
               </configuration>
@@ -354,8 +283,8 @@
                     <compilerArgs>
                       <arg>-Xlint</arg>
                       <arg>-Xlint:-serial</arg>
-<!--                       <arg>-bootclasspath</arg> -->
-<!--                       <arg>${bootclasspath.compile}</arg> -->
+                       <arg>-bootclasspath</arg> 
+                       <arg>${bootclasspath.compile}</arg> 
                     </compilerArgs>
                   </configuration>
                 </execution>
@@ -365,8 +294,8 @@
                     <compilerArgs>
                       <arg>-Xlint</arg>
                       <arg>-Xlint:-serial</arg>
-<!--                       <arg>-bootclasspath</arg> -->
-<!--                       <arg>${bootclasspath.testCompile}</arg> -->
+                       <arg>-bootclasspath</arg> 
+                       <arg>${bootclasspath.testCompile}</arg> 
                     </compilerArgs>
                   </configuration>
                 </execution>
@@ -389,27 +318,6 @@
         </resources>
 
         <plugins>
-        <!--
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.1</version>
-                <configuration>
-                    <goals>clean install</goals>
-                    <providerImplementations>
-                        <svn>javasvn</svn>
-                    </providerImplementations>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.code.maven-scm-provider-svnjava</groupId>
-                        <artifactId>maven-scm-provider-svnjava</artifactId>
-                        <version>2.0.5</version>
-                        <scope>compile</scope>
-                    </dependency>
-                </dependencies>
-            </plugin>
-         -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
