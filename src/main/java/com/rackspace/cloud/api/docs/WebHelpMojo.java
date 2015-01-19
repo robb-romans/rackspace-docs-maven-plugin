@@ -801,7 +801,7 @@ public abstract class WebHelpMojo extends AbstractWebhelpMojo {
 	    getLog().info("Exceptional!" + e);
 	}
 	//Get all the plugins entries from the pom.xml
-	List<Plugin>plugins=docProject.getBuildPlugins();
+	List<?> plugins=docProject.getBuildPlugins();
 	String clouddocsMavenPluginDocbook="false";
 	
 	//The pom.xml of each docbook that uses the rax-autodeploy project to deploy .war's to production, must depend on the 
@@ -809,7 +809,12 @@ public abstract class WebHelpMojo extends AbstractWebhelpMojo {
 	//<plugin> element. If such <artifactid> element has a value of "clouddocs-maven-plugin-docbook" then we set the 
 	//clouddocsMavenPluginDocbook="true" otherwise we leave the value as "false"
 	if(null!=plugins){
-		for(Plugin aPlugin:plugins){
+		for (Object pluginObject : plugins){
+			if (!(pluginObject instanceof Plugin)) {
+				continue;
+			}
+
+			Plugin aPlugin = (Plugin)pluginObject;
 			System.out.println("!@#!@#!@#!@#!@#!@#!@#!@#!@#!@#!@#!@#!@#!@#!@#!@#!@#aPlugin.getArtifactId()="+aPlugin.getArtifactId());
 			String artifactId=aPlugin.getArtifactId();
 			if(null!=artifactId && artifactId.equals("clouddocs-maven-plugin-docbook")){
@@ -823,8 +828,13 @@ public abstract class WebHelpMojo extends AbstractWebhelpMojo {
 	//then we should check all the <dependency> elements to see if any <artifactid>  child element of the <dependency> element
 	//has the value of "clouddocs-maven-plugin-docbook"
 	if(null!=clouddocsMavenPluginDocbook && clouddocsMavenPluginDocbook.equals("false")){
-		List<Dependency>dependencies=docProject.getDependencies();
-		for(Dependency aDependency:dependencies){
+		List<?>dependencies=docProject.getDependencies();
+		for(Object dependencyObject:dependencies){
+			if (!(dependencyObject instanceof Dependency)) {
+				continue;
+			}
+
+			Dependency aDependency = (Dependency)dependencyObject;
 			System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&aDependency.getArtifactId()="+aDependency.getArtifactId());
 		    String artifactId=aDependency.getArtifactId();
 		    if(null!=artifactId && artifactId.equals("clouddocs-maven-plugin-docbook")){
