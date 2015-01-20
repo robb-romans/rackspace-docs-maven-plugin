@@ -4,14 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rackspace.cloud.api</groupId>
-    <artifactId>clouddocs-maven-plugin-docbook</artifactId>
+    <artifactId>rackspace-docs-maven-plugin</artifactId>
 
-    <name>Cloud API Docs Plugin (DocBook)</name>
+    <name>Rackspace API Documentation Plugin</name>
 
     <version>2.1.5-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
-    <url>https://github.com/rackerlabs/clouddocs-maven-plugin-docbook</url>
+    <url>https://github.com/rackerlabs/rackspace-docs-maven-plugin</url>
     <licenses>
       <license>
         <name>Apache License, Version 2.0</name>
@@ -252,13 +252,13 @@
 
     <issueManagement>
       <system>GitHub Issues</system>
-      <url>https://github.com/rackerlabs/clouddocs-maven-plugin-docbook/issues</url>
+      <url>https://github.com/rackerlabs/rackspace-docs-maven-plugin/issues</url>
     </issueManagement>
 
     <scm>
-      <url>https://github.com/rackerlabs/clouddocs-maven-plugin-docbook/tree/master</url>
-      <connection>scm:git:git://github.com/rackerlabs/clouddocs-maven-plugin-docbook.git</connection>
-      <developerConnection>scm:git:git@github.com:rackerlabs/clouddocs-maven-plugin-docbook.git</developerConnection>
+      <url>https://github.com/rackerlabs/rackspace-docs-maven-plugin/tree/master</url>
+      <connection>scm:git:git://github.com/rackerlabs/rackspace-docs-maven-plugin.git</connection>
+      <developerConnection>scm:git:git@github.com:rackerlabs/rackspace-docs-maven-plugin.git</developerConnection>
       <tag>HEAD</tag>
     </scm>
 
