@@ -38,21 +38,21 @@ public abstract class ApiRefMojo extends AbstractHtmlMojo {
     private String failOnValidationError;
 
     /**
-     * Specifies the Goggle Analytics Id to use on the page
+     * Specifies the Google Analytics Id to use on the page
      *
      * @parameter expression="${generate-html.enableGoogleAnalytics}" default-value="1"
      */
     private String enableGoogleAnalytics;
 
     /**
-     * Specifies the Goggle Analytics Id to use on the page
+     * Specifies the Google Analytics Id to use on the page
      *
      * @parameter expression="${generate-html.googleAnalyticsId}" default-value="UA-17511903-1"
      */
     private String googleAnalyticsId;
 
     /**
-     * Specifies the Goggle Analytics domain to use on the page
+     * Specifies the Google Analytics domain to use on the page
      *
      * @parameter expression="${generate-html.googleAnalyticsDomain}" default-value=".openstack.org"
      */

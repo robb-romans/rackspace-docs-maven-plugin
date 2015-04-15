@@ -556,6 +556,16 @@
                     })();
                   </script>
         </xsl:if>
+        <xsl:if test="$branding = 'rackspace'">
+<!-- Begin Tealium -->
+                  <script type="text/javascript">
+                     var s = document.createElement( 'script' );
+                     if ( location.hostname == "api.rackspace.com") {
+                       s.setAttribute('src', "https://tags.tiqcdn.com/utag/rackspace/docs/prod/utag.js");
+                       document.body.appendChild( s ); }
+                  </script>
+<!-- End Tealium -->
+                </xsl:if>
       </body>
     </html>
   </xsl:template>
