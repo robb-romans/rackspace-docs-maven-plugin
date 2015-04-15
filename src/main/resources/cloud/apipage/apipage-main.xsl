@@ -181,7 +181,7 @@
                     <span class="icon-bar"/>
                     <span class="icon-bar"/>
                   </button>
-                  <a class="navbar-brand" href="/">Open Stack</a>
+                  <a class="navbar-brand" href="/">OpenStack</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse"
@@ -454,7 +454,7 @@
                             src="apiref/images/rackerpowered-logo.png"
                             alt="Racker Powered"/>
                         </div>
-                        <div class="col-md-2 col-md-offset-1">©2014
+                        <div class="col-md-2 col-md-offset-1">©2015
                           Rackspace, US Inc.</div>
                         <div class="col-md-8"><span class="footerlink">
                             <a href="/about/"
@@ -491,6 +491,14 @@
             <!-- syntax highlighter: -->
             <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"/>
             <script>hljs.initHighlightingOnLoad();</script>
+            <!-- Tealium -->
+            <script type="text/javascript">
+              (function (a, b, c, d) {
+              a = '//tags.tiqcdn.com/utag/rackspace/api-ref/prod/utag.js';
+              b = document; c = 'script'; d = b.createElement(c); d.src = a; d.type = 'text/java' + c; d.async = true;
+              a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a);
+              })();
+            </script>
           </xsl:when>
           <xsl:otherwise>
             <div class="container">
@@ -556,16 +564,6 @@
                     })();
                   </script>
         </xsl:if>
-        <xsl:if test="$branding = 'rackspace'">
-<!-- Begin Tealium -->
-                  <script type="text/javascript">
-                     var s = document.createElement( 'script' );
-                     if ( location.hostname == "api.rackspace.com") {
-                       s.setAttribute('src', "https://tags.tiqcdn.com/utag/rackspace/docs/prod/utag.js");
-                       document.body.appendChild( s ); }
-                  </script>
-<!-- End Tealium -->
-                </xsl:if>
       </body>
     </html>
   </xsl:template>
