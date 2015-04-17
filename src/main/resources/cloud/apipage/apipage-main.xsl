@@ -657,12 +657,15 @@
     <xsl:variable name="skipNoResponseText"
       select="boolean(number($skipNoResponseTextN))"/>
     <div class="doc-entry">
-      <div class="row {$id}">
+      <div class="row {$id} operation-grp">
         <xsl:choose>
           <xsl:when test="$branding = 'rackspace'">
             <link href="apiref/css/main-rackspace.css"
               rel="stylesheet" type="text/css"/>
-            <div class="col-md-1">
+            <div class="col-md-1 operation">
+            <a href="#{@id|@rax:id}" class="operation-anchor">
+            <span class="glyphicon glyphicon-link"></span>
+            </a>
               <span class="label label-success">
                 <xsl:value-of select="@name"/>
               </span>
@@ -684,7 +687,7 @@
           />
         </div>
         <div class="col-md-5">
-          <strong><xsl:value-of select="wadl:doc/@title"/></strong>
+          <strong id="{@id|@rax:id}"><xsl:value-of select="wadl:doc/@title"/></strong>
           <xsl:choose>
             <xsl:when
               test="wadl:doc//d:*[@role = 'shortdesc'] or wadl:doc//xhtml:*[@class = 'shortdesc']">
@@ -979,7 +982,7 @@
           <xsl:with-param name="i" select="$i + 1"/>
           <xsl:with-param name="trimCount">
             <xsl:value-of select="$trimCount"/>
-          </xsl:with-param> 
+          </xsl:with-param>
           <xsl:with-param name="uri">
             <xsl:value-of select="substring-after($uri,'/')"/>
           </xsl:with-param>
