@@ -4,24 +4,24 @@
 <!ENTITY uppercase "'ABCDEFGHIJKLMNOPQRSTUVWXYZ'">
  ]>
 <xsl:stylesheet exclude-result-prefixes="d date ng exsl"
-                
+
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         xmlns:d="http://docbook.org/ns/docbook"
         xmlns:exsl="http://exslt.org/common"
         xmlns:date="http://exslt.org/dates-and-times"
-        xmlns:ng="http://docbook.org/docbook-ng" 
+        xmlns:ng="http://docbook.org/docbook-ng"
         xmlns:db="http://docbook.org/ns/docbook"
         version="1.0" xmlns="http://www.w3.org/1999/xhtml">
 
     <!-- <xsl:import href="../../xhtml/chunk.xsl"/> -->
     <xsl:import href="urn:docbkx:stylesheet-base/xhtml/docbook.xsl" />
-    <!-- 
+    <!--
 	 DWC: Hack to keep olinks from being hot for now
 	 You should be able to remove this once the base xsls
 	 have been upgraded.
     -->
     <xsl:import href="xref.xsl"/>
-  
+
     <xsl:output
             method="html"
             encoding="utf-8"
@@ -178,7 +178,7 @@
 	  <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
 	</xsl:if>
       	<xsl:if test=".//d:programlisting[@language] or .//d:screen[@language] or .//d:literallayout[@language]">
-    <link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/> 
+    <link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/>
     <script type="text/javascript" src="scripts/shCore.js"><xsl:comment/></script>
     <!-- <script type="text/javascript" src="scripts/shBrushXml.js"><xsl:comment/></script> -->
     <!-- <script type="text/javascript" src="scripts/shBrushJava.js"><xsl:comment/></script>       -->
@@ -189,7 +189,7 @@
     <script type="text/javascript">
                SyntaxHighlighter.config.space = '&#32;';
                SyntaxHighlighter.all();
-    </script>      
+    </script>
 	</xsl:if>
 
 <xsl:text>
@@ -217,7 +217,7 @@
 	</xsl:if>
 	<meta name="git-sha" content="{$repository.commit}"/>
 	<meta name="buildTime" content="{$builddate}"/>
-        
+
       <xsl:choose>
           <xsl:when test="$branding = 'rackspace' or $branding = 'rackspace-private-cloud'">
               <script type="text/javascript">
@@ -275,10 +275,10 @@
               </script>
               <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"><xsl:comment/></script>
               <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"><xsl:comment/></script>
-              <script type="text/javascript" 
-                  src="http://content-services.rackspace.com/rax-headerservice/rest/service/raxheaderservice.js?headerdivid=raxheaderfooterservice-headercontent&amp;footerdivid=raxheaderfooterservice-footercontent&amp;contentdivid=content-wrapper&amp;filter=api_docs&amp;team=api">
-                  <xsl:comment/> 
-              </script>
+
+              <script type="text/javascript" src="https://c4d62906a15616653758-49dececd4e3f03377b7f33fac7abfae8.ssl.cf5.rackcdn.com/prod/raxheaderservice.js"><xsl:comment/></script>
+              <script type="text/javascript">injectTemplate("api", "#raxheaderfooterservice-headercontent", "#raxheaderfooterservice-footercontent", "#content-wrapper");</script>
+
               <script type="text/javascript" src="http://content-services.rackspace.com/rax-feedback-services/rest/service/raxfeedbackservice.js?feedbackdivid=feedbackid&amp;servername=content-services.rackspace.com"><xsl:comment/></script>
               <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery.cookie.js">
                   <xsl:comment> </xsl:comment>
@@ -291,7 +291,7 @@
               <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js">
                   <xsl:comment>jQuery plugin for glossary popups. </xsl:comment>
               </script>
-              
+
               <xsl:if test="$enable.google.analytics = '1' and $security = 'external' and not($google.analytics.id = '')">
                   <script type="text/javascript">
                       var _gaq = _gaq || [];
@@ -299,9 +299,9 @@
                       <xsl:choose>
                           <xsl:when test="$google.analytics.domain = ''"><!-- Do nothing --></xsl:when>
                           <xsl:otherwise>
-                              _gaq.push(['_setDomainName', '<xsl:value-of select="$google.analytics.domain"/>']);	        
-                          </xsl:otherwise>	
-                      </xsl:choose>  
+                              _gaq.push(['_setDomainName', '<xsl:value-of select="$google.analytics.domain"/>']);
+                          </xsl:otherwise>
+                      </xsl:choose>
                   </script>
                   <script type="text/javascript" src="{$webhelp.common.dir}../content/search/htmlFileInfoList.js">
                     <xsl:comment> </xsl:comment>
@@ -414,7 +414,7 @@
         <script type="text/javascript" src="search/nwSearchFnt.js">
             <xsl:comment> </xsl:comment>
         </script>
-        
+
         <!--script type="text/javascript" src="search/addition.js">
             <xsl:comment></xsl:comment>
         </script>
@@ -454,9 +454,9 @@
 	    <xsl:choose>
 	        <xsl:when test="$google.analytics.domain = ''"><!-- Do nothing --></xsl:when>
 	        <xsl:otherwise>
-	    _gaq.push(['_setDomainName', '<xsl:value-of select="$google.analytics.domain"/>']);	        
-	        </xsl:otherwise>	
-	    </xsl:choose>  
+	    _gaq.push(['_setDomainName', '<xsl:value-of select="$google.analytics.domain"/>']);
+	        </xsl:otherwise>
+	    </xsl:choose>
 	  </script>
 	  <script type="text/javascript" src="{$webhelp.common.dir}ga.js">
 	    <xsl:comment></xsl:comment>
@@ -514,9 +514,9 @@
     <xsl:when test="$security = 'reviewer'">REVIEW<xsl:text> -&#160;</xsl:text></xsl:when>
     <xsl:when test="$security = 'writeronly'">WRITERONLY<xsl:text> -&#160;</xsl:text></xsl:when>
     <xsl:when test="$security = 'external'"/>
-    </xsl:choose><xsl:if test="not(normalize-space($status.bar.text) = '')"><xsl:value-of select="normalize-space($status.bar.text)"/> -&#160;</xsl:if> 
+    </xsl:choose><xsl:if test="not(normalize-space($status.bar.text) = '')"><xsl:value-of select="normalize-space($status.bar.text)"/> -&#160;</xsl:if>
   </xsl:param>
-    
+
     <xsl:template name="user.header.content">
         <xsl:choose>
             <xsl:when test="not($rackspace.status.text = '')">   <!--TODO: Someday repeat this using javascript -->
@@ -582,7 +582,7 @@
 				<xsl:attribute name="title">
 				  <xsl:call-template name="gentext">
 					<xsl:with-param name="key" select="'HighlightButton'"/>
-				  </xsl:call-template>				  
+				  </xsl:call-template>
 				</xsl:attribute>
 			  </img>
                         </td>
@@ -623,7 +623,7 @@
                                     </xsl:when>
                                     <xsl:otherwise>&#160;</xsl:otherwise>
                                 </xsl:choose>
-                                
+
                                 <xsl:if test="count($next)>0">
                                     |
                                     <a accesskey="n">
@@ -747,9 +747,9 @@
         </xsl:call-template>
     </xsl:template>
 
-    <xsl:template match="db:programlisting[@language] | db:screen[@language] | db:literallayout[@language]">  
+    <xsl:template match="db:programlisting[@language] | db:screen[@language] | db:literallayout[@language]">
         <xsl:variable name="lang" select="@language"/>
-	
+
 	<xsl:variable name="brush">
 	  <xsl:choose>
 	    <xsl:when test="@language = 'bash' or @language = 'BASH' or @language = 'sh' or @language = 'ini' or @language = 'INI'">bash</xsl:when>
@@ -780,8 +780,8 @@
 	  <xsl:apply-templates/>
 	</pre>
 
-    </xsl:template>    
+    </xsl:template>
 
     <xsl:include href="revhistory2atom.xsl"/>
 
-</xsl:stylesheet> 
+</xsl:stylesheet>
