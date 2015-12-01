@@ -630,4 +630,17 @@
 
     </plugins>
   </build>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>rackspace-snapshots</id>
+      <name>Rackspace Snapshots</name>
+      <url>https://maven.research.ci.rackspace.net/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>rackspace-releases</id>
+      <name>Rackspace </name>
+      <url>https://maven.research.ci.rackspace.net/content/repositories/releases</url>
+    </repository>
+  </distributionManagement>
 </project>
