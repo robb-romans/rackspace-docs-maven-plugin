@@ -8,7 +8,7 @@
 
   <name>Rackspace API Documentation Plugin</name>
 
-  <version>2.1.6</version>
+  <version>2.1.6-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
   <url>https://github.com/rackerlabs/rackspace-docs-maven-plugin</url>
