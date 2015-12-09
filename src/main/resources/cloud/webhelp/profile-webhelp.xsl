@@ -221,21 +221,20 @@
         document does not give you any license to patents,
         trademarks, copyrights, or other intellectual
         property. </para>
-      <para>Rackspace, Rackspace logo, Fanatical Support®, and
-        OpenCenter are either registered trademarks or
-        trademarks of Rackspace US, Inc. in the United States
-        and/or other countries. OpenStack is either a
-        registered trademark or trademark of the OpenStack
-        Foundation in the United States and/or other
-        countries. </para>
-      <para>Third-party trademarks and tradenames appearing in
-        this document are the property of their respective
-        owners. Such third-party trademarks have been printed
-        in caps or initial caps and are used for referential
-        purposes only. We do not intend our use or display of
-        other companies’ tradenames, trademarks, or service
-        marks to imply a relationship with, or endorsement or
-        sponsorship of us by, these other companies. </para>
+      <para>
+        "Rackspace® and Fanatical Support® are service marks
+        of Rackspace US, Inc. and are registered in the United
+        States and other countries. Rackspace does not claim
+        trademark rights in abbreviations of its service or
+        product names, unless noted otherwise. All other
+        trademarks, service marks, images, products and brands
+        remain the sole property of their respective holders
+        and do not imply endorsement or sponsorship.
+      </para>
+      <para>OpenStack is either a registered trademark or
+        trademark of the OpenStack Foundation in the United
+        States and/or other countries.
+      </para>
     </xsl:if>
   </xsl:template>
 
