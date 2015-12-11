@@ -5,6 +5,8 @@ This project is the Rackspace/OpenStack customization of the Docbkx
 plug-in for creating documentation artifacts for Rackspace, OpenStack,
 and other OpenStack projects.
 
+To deploy, see README in https://github.com/rackerlabs/rackspace-docs-parent
+
 Example output
 ==============
 Rackspace output: 
