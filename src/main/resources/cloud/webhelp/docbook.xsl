@@ -86,7 +86,10 @@
   </xsl:param>
   <xsl:param name="section.autolabel">
     <xsl:choose>
-      <xsl:when test="$branding = 'rackspace-private-cloud'">0</xsl:when>
+      <xsl:when test="($branding =
+                      'rackspace-private-cloud' or
+                      $branding =
+                      'rackspace-private-cloud-redhat')">0</xsl:when>
       <xsl:otherwise>1</xsl:otherwise>
     </xsl:choose>
   </xsl:param>
@@ -108,20 +111,27 @@
   <xsl:param name="suppress.footer.navigation">1</xsl:param>
   <xsl:param name="enable.google.analytics">
     <xsl:choose>
-      <xsl:when test="($branding = 'rackspace' or $branding = 'rackspace-private-cloud') and $security = 'external'">1</xsl:when>
+      <xsl:when test="($branding = 'rackspace' or
+                      $branding = 'rackspace-private-cloud' or
+                      $branding = 'rackspace-private-cloud-redhat')
+                      and $security = 'external'">1</xsl:when>
       <xsl:otherwise>0</xsl:otherwise>
     </xsl:choose>
   </xsl:param>
   <xsl:param name="google.analytics.id">
     <xsl:choose>
-      <xsl:when test="$branding = 'rackspace' or $branding = 'rackspace-private-cloud'">UA-23102455-4</xsl:when>
+      <xsl:when test="($branding = 'rackspace' or
+                      $branding = 'rackspace-private-cloud' or
+                      $branding =
+                      'rackspace-private-cloud-redhat')">UA-23102455-4</xsl:when>
       <xsl:otherwise/>
     </xsl:choose>
   </xsl:param>
   <xsl:param name="google.analytics.domain">
     <xsl:choose>
       <xsl:when test="$branding = 'rackspace'">.rackspace.com</xsl:when>
-      <xsl:when test="$branding = 'rackspace-private-cloud'">.rackspace.com</xsl:when>
+      <xsl:when test="($branding = 'rackspace-private-cloud' or
+                      '$branding = 'rackspace-private-cloud-redhat')">.rackspace.com</xsl:when>
       <xsl:when test="$branding = 'openstack'">.openstack.org</xsl:when>
       <xsl:when test="$branding = 'repose'">.openrepose.org</xsl:when>
       <xsl:otherwise/>
@@ -178,7 +188,9 @@ set       toc,title
   <xsl:param name="disqus.shortname">
     <xsl:choose>
       <xsl:when test="$branding = 'rackspace'">rc-api-docs</xsl:when>
-      <xsl:when test="$branding = 'rackspace-private-cloud'">rackspaceprivateclouddocs</xsl:when>
+      <xsl:when test="($branding = 'rackspace-private-cloud' or
+                      $branding =
+                      'rackspace-private-cloud-redhat')">rackspaceprivateclouddocs</xsl:when>
       <xsl:when test="$branding = 'openstack'">openstackdocs</xsl:when>
     </xsl:choose>
       
@@ -308,9 +320,15 @@ ERROR: Feedback email not set but internal comments are enabled.
         
         <xsl:variable name="pubdate"><xsl:if test="not($security = 'external') and not($security = '') and $pdfFilenameBase = ''">-<xsl:value-of select="$security"/></xsl:if><xsl:if test="/*/d:info/d:pubdate and $includeDateInPdfFilename = '1'"><xsl:value-of select="concat('-',translate(/*/d:info/d:pubdate,'-',''))"/></xsl:if></xsl:variable>        
         <xsl:choose>
-            <xsl:when test="$branding = 'rackspace' or $branding = 'rackspace-private-cloud'">
+          <xsl:when test="($branding = 'rackspace' or
+                          $branding = 'rackspace-private-cloud' or
+                          $branding = 'rackspace-private-cloud-redhat')">
                 <div class="breadcrumbs">
-                    <a href="/">Home</a><span class="breadcrumbstitle"><xsl:value-of select="normalize-space(//d:title[1])"/><xsl:apply-templates select="/*/d:info/d:releaseinfo[1]" mode="rackspace-title"/></span>
+                    <a href="/">Home</a><span
+                    class="breadcrumbstitle"><xsl:value-of
+                    select="normalize-space(//d:title[1])"/>
+                    <xsl:apply-templates select="/*/d:info/d:releaseinfo[1]"
+                    mode="rackspace-title"/></span>
                     <xsl:choose>
                         <xsl:when test="normalize-space($autoPdfUrl) != '' and $useLatestSuffixInPdfUrl = '0'">
                             <a onclick="_gaq.push(['_trackEvent', 'Header', 'pdfDownload', 'click', 1]);" alt="Download a pdf of this document" style="padding-right: 5px;" class="pdficon" href="{concat(normalize-space(substring($autoPdfUrl,1,string-length($autoPdfUrl) - 3)), $pubdate,'.pdf')}"><img src="{$webhelp.common.dir}images/pdf.png"/></a>
@@ -442,7 +460,9 @@ ERROR: Feedback email not set but internal comments are enabled.
         <xsl:variable name="up" select="parent::*"/>
         
           <xsl:choose>
-              <xsl:when test="$branding = 'rackspace' or $branding = 'rackspace-private-cloud'">
+            <xsl:when test="($branding = 'rackspace' or
+                            $branding =  'rackspace-private-cloud' or
+                            $branding = 'rackspace-private-cloud-redhat')">
                   <div id="raxheaderfooterservice-headercontent"><xsl:comment/></div>
                   <noscript>
                       <div class="noscript-message-wrapper">
@@ -635,7 +655,9 @@ ERROR: Feedback email not set but internal comments are enabled.
                 </xsl:variable>
                 
                 <xsl:choose>
-                    <xsl:when test="$branding = 'rackspace' or $branding = 'rackspace-private-cloud'">
+                    <xsl:when test="($branding = 'rackspace' or
+                                    $branding = 'rackspace-private-cloud' or
+                                    $branding = 'rackspace-private-cloud-redhat')">
                         <div id="rax-leftnavigation">
                           <div id="theTabs">
 	                          <div id="rax-tabslistid">
@@ -647,7 +669,11 @@ ERROR: Feedback email not set but internal comments are enabled.
                                     id="tocLoading" style="display:block;"/>
                                 <div id="ulTreeDiv" style="display:none">
                                     <ul id="tree" class="filetree">
-                                        <xsl:if test="$branding = 'rackspace' or $branding = 'rackspace-private-cloud'">
+                                        <xsl:if test="($branding = 'rackspace' or
+                                                       $branding =
+                                                       'rackspace-private-cloud'
+                                                       or
+                                                       $branding = 'rackspace-private-cloud-redhat')">
                                             <li tabindex="2">
                                                 <xsl:if test="self::d:book">
                                                     <xsl:attribute name="id">webhelp-currentid</xsl:attribute>

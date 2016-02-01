@@ -219,7 +219,9 @@
 	<meta name="buildTime" content="{$builddate}"/>
 
       <xsl:choose>
-          <xsl:when test="$branding = 'rackspace' or $branding = 'rackspace-private-cloud'">
+        <xsl:when test="($branding = 'rackspace' or
+                        $branding =  'rackspace-private-cloud' or
+                        $branding =  'rackspace-private-cloud-redhat')">
               <script type="text/javascript">
                   //The id for tree cookie
                   var treeCookieId = "<xsl:value-of select="normalize-space($webhelp.tree.cookie.id)"/>";

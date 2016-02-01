@@ -40,7 +40,9 @@
                     <xsl:with-param name="nav.context" select="$nav.context"/>
                 </xsl:call-template>
                 <xsl:choose>
-                    <xsl:when test="$branding = 'rackspace' or $branding = 'rackspace-private-cloud'">
+                  <xsl:when test="($branding = 'rackspace' or
+                                  $branding = 'rackspace-private-cloud' or
+                                  $branding = 'rackspace-private-cloud-redhat')">
                         <div id="content-wrapper">
                             <div id="content">
                                 <xsl:call-template name="user.header.content"/>
