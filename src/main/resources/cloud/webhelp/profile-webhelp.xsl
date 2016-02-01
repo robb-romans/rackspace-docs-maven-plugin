@@ -231,9 +231,16 @@
         remain the sole property of their respective holders
         and do not imply endorsement or sponsorship.
       </para>
-      <para>OpenStack is either a registered trademark or
+      <para>
+      	OpenStack is either a registered trademark or
         trademark of the OpenStack Foundation in the United
         States and/or other countries.
+      </para>
+      <para>
+        "Red Hat," Red Hat Linux, the Red Hat "Shadowman" logo, and the
+        Red Hat products listed are trademarks or registered trademarks
+        of Red Hat, Inc. in the US and other countries. Linux is a
+        registered trademark of Linus Torvalds.
       </para>
     </xsl:if>
   </xsl:template>
