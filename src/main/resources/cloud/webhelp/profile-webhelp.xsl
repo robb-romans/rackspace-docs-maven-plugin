@@ -49,7 +49,8 @@
 
   <xsl:param name="builtForOpenStack">
     <xsl:choose>
-      <xsl:when test="$branding = 'rackspace-private-cloud'">0</xsl:when>
+      <xsl:when test="($branding = 'rackspace-private-cloud' or
+                      $branding = 'rackspace-private-cloud-redhat')">0</xsl:when>
       <xsl:otherwise>0</xsl:otherwise>
     </xsl:choose>
   </xsl:param>
@@ -98,7 +99,10 @@
             </d:informalfigure>
           </d:link>
         </xsl:when>
-        <xsl:when test="$branding = 'rackspace-private-cloud' and not(preceding-sibling::d:legalnotice)">
+        <xsl:when test="($branding = 'rackspace-private-cloud' or
+                        $branding = 'rackspace-private-cloud-redhat')
+                        and not
+                        (preceding-sibling::d:legalnotice)">
           <d:link xlink:href="http://www.openstack.org">
             <d:informalfigure>
               <d:mediaobject>
